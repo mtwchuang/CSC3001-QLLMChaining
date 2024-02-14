@@ -1,2 +1,6 @@
 dependencies
 datasets
+model
+database.db
+old_code.py
+__pycache__

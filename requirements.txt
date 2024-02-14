@@ -1,1 +1,6 @@
+streamlit
+langchain
+ctransformers
 pandas
+accelerator
+sqlite3
