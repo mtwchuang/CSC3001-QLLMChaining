@@ -6,7 +6,7 @@ import llm_config
 
 # global variables
 # db_config.drop_db()
-db_conn = db_config.connect_to_db()
+# db_conn = db_config.connect_to_db()
 
 # setting up sqlite3 database
 books_df = pd.read_csv('raw_datasets/books_data.csv')
@@ -14,7 +14,7 @@ db_config.create_table('TBL_Books', books_df)
 test_context = db_config.get_db_schema()
 
 # setting up llm
-nsql_llm = llm_config.deploy_nsql_llama()
+# nsql_llm = llm_config.deploy_nsql_llama()
 
 # question = "Which are the books which were published before the year 1875?"
 # generated_query = llm_config.generate_sql_query(nsql_llm, test_context, question)
@@ -63,8 +63,20 @@ if user_question:
 
     with st.chat_message("assistant"):
         try:
-            output_query = llm_config.generate_sql_query(nsql_llm, test_context, user_question)
-            st.write(output_query)
+            nsql_llm = llm_config.deploy_nsql_llama()
+            generated_sql_query = llm_config.generate_sql_query(nsql_llm, test_context, user_question)
+            st.session_state.messages.append({"role": "assistant", "content": generated_sql_query})
+            st.write(generated_sql_query)
+        except Exception as error:
+            print("Error: ", error)
+
+        try:
+            db_conn = db_config.connect_to_db()
+            db_curs = db_conn.cursor()
+            db_curs.execute(generated_sql_query)
+            rows = db_curs.fetchall()
+            st.session_state.messages.append({"role": "assistant", "content": rows})
+            st.write(rows)
         except Exception as error:
             print("Error: ", error)
     

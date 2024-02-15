@@ -41,6 +41,7 @@ def generate_sql_query(llm, context, question):
     # feed prompt into llm for sql generation
     try:
         sql_query = "SELECT" + str(llm.invoke(context_with_question))
+        print("SQL Query: ",sql_query)
         # time performance console print
         end_time = time.time()
         print("Elapsed SQL generation time: ", (end_time-start_time))
