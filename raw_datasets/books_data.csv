@@ -1,0 +1,291 @@
+,Books,Authors,Language,First_Published,Sales_in_millions
+0,A Tale of Two Cities,Charles Dickens,English,1859,200.0
+1,The Little Prince (Le Petit Prince),Antoine de Saint-Exupéry,French,1943,200.0
+2,Harry Potter and the Philosopher's Stone,J. K. Rowling,English,1997,120.0
+3,And Then There Were None,Agatha Christie,English,1939,100.0
+4,Dream of the Red Chamber (紅樓夢),Cao Xueqin,Chinese,1791,100.0
+5,The Hobbit,J. R. R. Tolkien,English,1937,100.0
+6,She: A History of Adventure,H. Rider Haggard,English,1887,83.0
+7,The Da Vinci Code,Dan Brown,English,2003,80.0
+8,Harry Potter and the Chamber of Secrets,J. K. Rowling,English,1998,77.0
+9,Harry Potter and the Prisoner of Azkaban,J. K. Rowling,English,1999,65.0
+10,Harry Potter and the Goblet of Fire,J. K. Rowling,English,2000,65.0
+11,Harry Potter and the Order of the Phoenix,J. K. Rowling,English,2003,65.0
+12,Harry Potter and the Half-Blood Prince,J. K. Rowling,English,2005,65.0
+13,Harry Potter and the Deathly Hallows,J. K. Rowling,English,2007,65.0
+14,The Alchemist (O Alquimista),Paulo Coelho,Portuguese,1988,65.0
+15,The Catcher in the Rye,J. D. Salinger,English,1951,65.0
+16,The Bridges of Madison County,Robert James Waller,English,1992,60.0
+17,One Hundred Years of Solitude (Cien años de soledad),Gabriel García Márquez,Spanish,1967,50.0
+18,Lolita,Vladimir Nabokov,English,1955,50.0
+19,Heidi,Johanna Spyri,German,1880,50.0
+20,The Common Sense Book of Baby and Child Care,Benjamin Spock,English,1946,50.0
+21,Anne of Green Gables,Lucy Maud Montgomery,English,1908,50.0
+22,Black Beauty,Anna Sewell,English,1877,50.0
+23,The Name of the Rose (Il Nome della Rosa),Umberto Eco,Italian,1980,50.0
+24,The Eagle Has Landed,Jack Higgins,English,1975,50.0
+25,Watership Down,Richard Adams,English,1972,50.0
+26,The Hite Report,Shere Hite,English,1976,50.0
+27,Charlotte's Web,E. B. White; illustrated by Garth Williams,English,1952,50.0
+28,The Ginger Man,J. P. Donleavy,English,1955,50.0
+29,The Tale of Peter Rabbit,Beatrix Potter,English,1902,45.0
+30,Jonathan Livingston Seagull,Richard Bach,English,1970,44.0
+31,The Very Hungry Caterpillar,Eric Carle,English,1969,43.0
+32,A Message to Garcia,Elbert Hubbard,English,1899,40.0
+33,To Kill a Mockingbird,Harper Lee,English,1960,40.0
+34,Flowers in the Attic,V. C. Andrews,English,1979,40.0
+35,Cosmos,Carl Sagan,English,1980,40.0
+36,Sophie's World (Sofies verden),Jostein Gaarder,Norwegian,1991,40.0
+37,Angels & Demons,Dan Brown,English,2000,39.0
+38,Alcholics Anonymous,William Griffith Wilson,English,1939,35.0
+39,Kane and Abel,Jeffrey Archer,English,1979,37.0
+40,How the Steel Was Tempered (Как закалялась сталь),Nikolai Ostrovsky,Russian,1932,36.4
+41,War and Peace (Война и мир),Leo Tolstoy,Russian,1869,36.0
+42,The Adventures of Pinocchio (Le avventure di Pinocchio),Carlo Collodi,Italian,1881,35.0
+43,The Diary of Anne Frank (Het Achterhuis),Anne Frank,Dutch,1947,35.0
+44,Your Erroneous Zones,Wayne Dyer,English,1976,35.0
+45,The Thorn Birds,Colleen McCullough,English,1977,33.0
+46,The Kite Runner,Khaled Hosseini,English,2003,31.5
+47,Valley of the Dolls,Jacqueline Susann,English,1966,31.0
+48,How to Win Friends and Influence People,Dale Carnegie,English,1936,35.0
+49,The Great Gatsby,F. Scott Fitzgerald,English,1925,30.0
+50,Gone with the Wind,Margaret Mitchell,English,1936,30.0
+51,Rebecca,Daphne du Maurier,English,1938,30.0
+52,The Revolt of Mamie Stover,William Bradford Huie,English,1951,30.0
+53,The Girl with the Dragon Tattoo (Män som hatar kvinnor),Stieg Larsson,Swedish,2005,30.0
+54,The Lost Symbol,Dan Brown,English,2009,30.0
+55,The Hunger Games,Suzanne Collins,English,2008,29.0
+56,James and the Giant Peach,Roald Dahl,English,1961,28.0
+57,The Young Guard (Молодая гвардия),Alexander Alexandrovich Fadeyev,Russian,1945,26.0
+58,Who Moved My Cheese?,Spencer Johnson,English,1998,28.0
+59,A Brief History of Time,Stephen Hawking,English,1988,25.0
+60,Paul et Virginie,Jacques-Henri Bernardin de Saint-Pierre,French,1788,25.0
+61,Lust for Life,Irving Stone,English,1934,25.0
+62,The Wind in the Willows,Kenneth Grahame,English,1908,25.0
+63,The 7 Habits of Highly Effective People,Stephen R. Covey,English,1989,25.0
+64,Totto-Chan: The Little Girl at the Window (窓ぎわのトットちゃん),Tetsuko Kuroyanagi,Japanese,1981,25.0
+65,Virgin Soil Upturned (Поднятая целина),Mikhail Sholokhov,Russian,1935,24.0
+66,The Celestine Prophecy,James Redfield,English,1993,23.0
+67,The Fault in Our Stars,John Green,English,2012,23.0
+68,The Girl on the Train,Paula Hawkins,English,2015,23.0
+69,The Shack,William P. Young,English,2007,22.5
+70,Uncle Styopa (Дядя Стёпа),Sergey Mikhalkov,Russian,1936,21.0
+71,The Godfather,Mario Puzo,English,1969,21.0
+72,Love Story,Erich Segal,English,1970,21.0
+73,Catching Fire,Suzanne Collins,English,2009,21.0
+74,Mockingjay,Suzanne Collins,English,2010,20.0
+75,Kitchen (キッチン),Banana Yoshimoto,Japanese,1988,20.0
+76,Andromeda Nebula (Туманность Андромеды),Ivan Yefremov,Russian,1957,20.0
+77,Gone Girl,Gillian Flynn,English,2012,20.0
+78,The Bermuda Triangle,Charles Berlitz,English,1974,20.0
+79,Things Fall Apart,Chinua Achebe,English,1958,20.0
+80,Wolf Totem (狼图腾),Jiang Rong,Chinese,2004,20.0
+81,The Happy Hooker: My Own Story,Xaviera Hollander,English,1971,20.0
+82,Jaws,Peter Benchley,English,1974,20.0
+83,Love You Forever,Robert Munsch,English,1986,20.0
+84,The Women's Room,Marilyn French,English,1977,20.0
+85,What to Expect When You're Expecting,Arlene Eisenberg and Heidi Murkoff,English,1984,20.0
+86,Adventures of Huckleberry Finn,Mark Twain,English,1885,20.0
+87,"The Secret Diary of Adrian Mole, Aged 13¾",Sue Townsend,English,1982,20.0
+88,Pride and Prejudice,Jane Austen,English,1813,20.0
+89,Kon-Tiki: Across the Pacific in a Raft (Kon-Tiki ekspedisjonen),Thor Heyerdahl,Norwegian,1950,20.0
+90,The Good Soldier Švejk (Osudy dobrého vojáka Švejka za světové války),Jaroslav Hašek,Czech,1923,20.0
+91,Where the Wild Things Are,Maurice Sendak,English,1963,20.0
+92,The Power of Positive Thinking,Norman Vincent Peale,English,1952,20.0
+93,The Secret,Rhonda Byrne,English,2006,20.0
+94,Fear of Flying,Erica Jong,English,1973,20.0
+95,Dune,Frank Herbert,English,1965,20.0
+96,Charlie and the Chocolate Factory,Roald Dahl,English,1964,20.0
+97,The Naked Ape,Desmond Morris,English,1968,20.0
+98,Where the Crawdads Sing,Delia Owens,English,2018,18.0
+99,Matilda,Roald Dahl,English,1988,17.0
+100,The Book Thief,Markus Zusak,English,2005,16.0
+101,The Horse Whisperer,Nicholas Evans,English,1995,16.0
+102,Goodnight Moon,Margaret Wise Brown,English,1947,16.0
+103,The Neverending Story (Die unendliche Geschichte),Michael Ende,German,1979,16.0
+104,All the Light We Cannot See,Anthony Doerr,English,2014,15.3
+105,Fifty Shades of Grey,E. L. James,English,2011,15.2
+106,The Outsiders,S. E. Hinton,English,1967,15.0
+107,Guess How Much I Love You,Sam McBratney,English,1994,15.0
+108,Shōgun,James Clavell,English,1975,15.0
+109,The Poky Little Puppy,Janette Sebring Lowrey,English,1942,15.0
+110,The Pillars of the Earth,Ken Follett,English,1989,15.0
+111,Perfume (Das Parfum),Patrick Süskind,German,1985,15.0
+112,The Grapes of Wrath,John Steinbeck,English,1939,15.0
+113,The Shadow of the Wind (La sombra del viento),Carlos Ruiz Zafón,Spanish,2001,15.0
+114,Interpreter of Maladies,Jhumpa Lahiri,English,2000,15.0
+115,Becoming,Michelle Obama,English,2018,14.0
+116,The Hitchhiker's Guide to the Galaxy,Douglas Adams,English,1979,14.0
+117,Tuesdays with Morrie,Mitch Albom,English,1997,14.0
+118,God's Little Acre,Erskine Caldwell,English,1933,14.0
+119,Follow Your Heart (Va' dove ti porta il cuore),Susanna Tamaro,Italian,1994,14.0
+120,A Wrinkle in Time,Madeleine L'Engle,English,1962,14.0
+121,Long Walk to Freedom,Nelson Mandela,English,1994,14.0
+122,The Old Man and the Sea,Ernest Hemingway,English,1952,13.0
+123,Life After Life,Raymond Moody,English,1975,13.0
+124,Momo,Michael Ende,German,1973,13.0
+125,Peyton Place,Grace Metalious,English,1956,12.1
+126,The Giver,Lois Lowry,English,1993,12.0
+127,Me Before You,Jojo Moyes,English,2012,12.0
+128,Norwegian Wood (ノルウェイの森),Haruki Murakami,Japanese,1987,12.0
+129,The Plague (La Peste),Albert Camus,French,1947,12.0
+130,No Longer Human (人間失格),Osamu Dazai,Japanese,1948,12.0
+131,Man's Search for Meaning (Ein Psychologe erlebt das Konzentrationslager),Viktor Frankl,German,1946,12.0
+132,The Divine Comedy (La Divina Commedia),Dante Alighieri,Italian,1304,11.0
+133,The Prophet,Kahlil Gibran,English,1923,11.0
+134,The Boy in the Striped Pyjamas,John Boyne,English,2006,11.0
+135,The Exorcist,William Peter Blatty,English,1971,11.0
+136,The Gruffalo,Julia Donaldson,English,1999,10.5
+137,Fifty Shades Darker,E. L. James,English,2012,10.4
+138,Tobacco Road,Erskine Caldwell,English,1932,10.0
+139,"Ronia, the Robber's Daughter",Astrid Lindgren,Swedish,1981,10.0
+140,The Cat in the Hat,Dr. Seuss,English,1957,10.5
+141,Diana: Her True Story,Andrew Morton,English,1992,10.0
+142,The Help,Kathryn Stockett,English,2009,10.0
+143,Catch-22,Joseph Heller,English,1961,10.0
+144,The Stranger (L'Étranger),Albert Camus,French,1942,10.0
+145,Eye of the Needle,Ken Follett,English,1978,10.0
+146,The Lovely Bones,Alice Sebold,English,2002,10.0
+147,Wild Swans,Jung Chang,English,1992,10.0
+148,Santa Evita,Tomás Eloy Martínez,Spanish,1995,10.0
+149,Night (Un di Velt Hot Geshvign),Elie Wiesel,Yiddish,1958,10.0
+150,Confucius from the Heart (于丹《论语》心得),Yu Dan,Chinese,2006,10.0
+151,The Total Woman,Marabel Morgan,English,1974,10.0
+152,Knowledge-value Revolution (知価革命),Taichi Sakaiya,Japanese,1985,10.0
+153,Problems in China's Socialist Economy (中国社会主义经济问题研究),Xue Muqiao,Chinese,1979,10.0
+154,What Color Is Your Parachute?,Richard Nelson Bolles,English,1970,10.0
+155,The Dukan Diet,Pierre Dukan,French,2000,10.0
+156,The Joy of Sex,Alex Comfort,English,1972,10.0
+157,The Gospel According to Peanuts,Robert L. Short,English,1965,10.0
+158,The Subtle Art of Not Giving a Fuck,Mark Manson,English,2016,10.0
+159,Life of Pi,Yann Martel,English,2001,10.0
+160,The Front Runner,Patricia Nell Warren,English,1974,10.0
+161,The Goal,Eliyahu M. Goldratt,English,1984,10.0
+162,Fahrenheit 451,Ray Bradbury,English,1953,10.0
+163,Angela's Ashes,Frank McCourt,English,1996,10.0
+164,The Story of My Experiments with Truth (સત્યના પ્રયોગો અથવા આત્મકથા),Mohandas Karamchand Gandhi,Gujarati,1925–1929,10.0
+165,Bridget Jones's Diary,Helen Fielding,English,1996,10.0
+166,Harry Potter,J. K. Rowling,English,1997–2007,600.0
+167,Goosebumps,R. L. Stine,English,1992–present,400.0
+168,Perry Mason,Erle Stanley Gardner,English,1933–1973,300.0
+169,Diary of a Wimpy Kid,Jeff Kinney,English,2007–present,275.0
+170,Berenstain Bears,Stan and Jan Berenstain,English,1962–present,260.0
+171,Choose Your Own Adventure,Various authors,English,1979–present,250.0
+172,Sweet Valley High,Francine Pascal and ghostwriters,English,1983–2003,250.0
+173,The Railway Series,"Rev. W. Awdry, Christopher Awdry",English,1945–2011,201.0
+174,Noddy,Enid Blyton,English,1949–present,200.0
+175,Nancy Drew,Various authors as Carolyn Keene,English,1930–present,200.0
+176,San-Antonio,Frédéric Dard,French,1949–2001,200.0
+177,Robert Langdon,Dan Brown,English,2000–present,200.0
+178,Geronimo Stilton,Elisabetta Dami,Italian,1997–present,180.0
+179,Percy Jackson & the Olympians,Rick Riordan,English,2005–present,180.0
+180,The Baby-sitters Club,Ann Martin,English,1986–present,172.0
+181,Twilight,Stephenie Meyer,English,2005–2020,160.0
+182,Star Wars,Various authors,English,1977–present,160.0
+183,Little Critter,Mercer Mayer,English,1975–present,150.0
+184,Peter Rabbit,Beatrix Potter,English,1902–1930,150.0
+185,Fifty Shades,E. L. James,English,2011–2015,150.0
+186,American Girl,Various authors,English,1986–present,160.0
+187,Chicken Soup for the Soul,"Jack Canfield, Mark Victor Hansen",English,1997–present,130.0
+188,Clifford the Big Red Dog,Norman Bridwell,English,1963–2014,129.0
+189,Frank Merriwell,Gilbert Patten,English,1896–1936,125.0
+190,Dirk Pitt,Clive Cussler,English,1973–present,120.0
+191,宮本武蔵 (Musashi),Eiji Yoshikawa,Japanese,1935–1939,120.0
+192,The Chronicles of Narnia,C. S. Lewis,English,1950–1956,120.0
+193,Mr. Men,"Roger Hargreaves, Adam Hargreaves",English,1971–present,120.0
+194,SAS,Gérard de Villiers,French,1965–2013,120.0
+195,The Hunger Games,Suzanne Collins,English,2008–2020,100.0
+196,James Bond,Ian Fleming,English,1953–1966,100.0
+197,Martine,"Gilbert Delahaye, Marcel Marlier",French,1954–2014,100.0
+198,Millennium,"Stieg Larsson, David Lagercrantz",Swedish,2005–present,100.0
+199,A Song of Ice and Fire,George R. R. Martin,English,1996–present,90.0
+200,The Wheel of Time,"Robert Jordan, Brandon Sanderson",English,1990–2013,100.0
+201,Discworld,Terry Pratchett,English,1983–2015,90.0
+202,Nijntje (Miffy),Dick Bruna,Dutch,1955–present,85.0
+203,Alex Cross,James Patterson,English,1993–present,81.0
+204,Anpanman (アンパンマン),Takashi Yanase,Japanese,1973–2013,80.0
+205,Captain Underpants,Dav Pilkey,English,1997–2015,80.0
+206,Fear Street,R. L. Stine,English,1989–present,80.0
+207,Pippi Långstrump (Pippi Longstocking),Astrid Lindgren,Swedish,1945–2001,80.0
+208,The Vampire Chronicles,Anne Rice,English,1976–2021,80.0
+209,OSS 117,Jean Bruce,French,1949–1992,75.0
+210,Winnie-the-Pooh,A. A. Milne; illustrated by E. H. Shepard,English,1926–1928,70.0
+211,Magic Tree House series,Mary Pope Osborne,English,1992–present,70.0
+212,Left Behind,"Tim LaHaye, Jerry B. Jenkins",English,1996–2007,65.0
+213,A Series of Unfortunate Events,Lemony Snicket aka Daniel Handler,English,1999–2006,65.0
+214,Little House on the Prairie,Laura Ingalls Wilder,English,1932–2006,60.0
+215,All Creatures Great and Small,"Alf Wight, as James Herriot",English,1970–1992,60.0
+216,Jack Reacher,Lee Child,English,1997–present,60.0
+217,The Magic School Bus,"Joanna Cole, illustrated by Bruce Degen",English,1986–2010,58.0
+218,Where's Wally?[241],Martin Handford,English,1987–present,55.0
+219,"Men Are from Mars, Women Are from Venus",John Gray,English,1992–present,50.0
+220,The Hardy Boys,Various authors as Franklin W. Dixon,English,1927–present,50.0
+221,The Bobbsey Twins,Various authors as Laura Lee Hope,English,1904–1979,50.0
+222,Tarzan,Edgar Rice Burroughs,English,1914–1995,50.0
+223,Earth's Children,Jean M. Auel,English,1980–2011,45.0
+224,A Child's First Library Of Learning,Various authors,English,1980–,45.0
+225,Junie B. Jones,Barbara Park,English,1992–2013,44.0
+226,Harry Bosch,Michael Connelly,English,1992–,42.0
+227,Harry Hole,Jo Nesbø,Norwegian,1997–present,40.0
+228,Warriors,Erin Hunter,English,2003–present,40.0
+229,连环画 铁道游击队 (Picture-and-story book Railway Guerilla),original author: Liu Zhixia,Chinese,1955–1962,36.5
+230,The Shadowhunter Chronicles,Cassandra Clare,English,2007–present,50.0
+231,かいけつゾロリ (Kaiketsu Zorori),Yutaka Hara,Japanese,1987–present,35.0
+232,Paddington Bear,Michael Bond,English,1958–present,35.0
+233,Divergent trilogy,Veronica Roth,English,2011–2013,35.0
+234,ノンタン (Nontan),Sachiko Kiyono,Japanese,1976–2016,33.6
+235,The Inheritance Cycle,Christopher Paolini,English,2002–2011,33.0
+236,"Rich Dad, Poor Dad","Robert Kiyosaki, Sharon Lechter",English,1997–,32.0
+237,とある魔術の禁書目録 (Toaru Majutsu no Index),Kazuma Kamachi,Japanese,2004–,30.0
+238,グイン・サーガ (Guin Saga),Kaoru Kurimoto,Japanese,1979–2009,30.0
+239,徳川家康 (Tokugawa Ieyasu),Sōhachi Yamaoka,Japanese,1950–1967,30.0
+240,Ramona,Beverly Cleary,English,1955–1999,30.0
+241,The Dark Tower,Stephen King,English,1982–2012,30.0
+242,Dork Diaries,Rachel Renée Russell,English,2009–present,30.0
+243,The Destroyer,"Warren Murphy and Richard Sapir, various authors",English,1971–present,30.0
+244,地球往事 (Remembrance of Earth's Past),Liu Cixin,Chinese,2008–2010,29.0
+245,三毛猫ホームズシリーズ (Calico Cat Holmes series),Jirō Akagawa,Japanese,1978–present,28.0
+246,Curious George,Hans Augusto Rey and Margret Rey,English,1941–present,27.0
+247,Shannara,Terry Brooks,English,1977–present,26.0
+248,Kurt Wallander,Henning Mankell,Swedish,1991–2002,25.0
+249,Sagan om Isfolket (The Legend of the Ice People),Margit Sandemo,Swedish,1982–1989,25.0
+250,The Sword of Truth,Terry Goodkind,English,1998–present,25.0
+251,Outlander,Diana Gabaldon,English,1991–present,25.0
+252,ズッコケ三人組 (Zukkoke Sanningumi),Masamoto Nasu,Japanese,1978–2004,25.0
+253,鬼平犯科帳 (Onihei Hankachō),Shōtarō Ikenami,Japanese,1968–1990,24.4
+254,Brain Quest,Various authors,English,1992–present,23.7
+255,South Beach Diet,Arthur Agatston,English,2003–present,22.0
+256,ソードアート・オンライン (Sword Art Online),Reki Kawahara,Japanese,2009–present,30.0
+257,竜馬がゆく (Ryoma ga Yuku),Ryōtarō Shiba,Japanese,1963–1966,21.5
+258,Artemis Fowl,Eoin Colfer,English,2001–2012,21.0
+259,The Cosmere,Brandon Sanderson,English,2005–present,21.0
+260,I Survived,Lauren Tarshis,English,2010–2020,
+261,Découvertes Gallimard,Various authors,French,1986–present,
+262,Redwall,Brian Jacques,English,1986–2011,20.0
+263,Maisy,Lucy Cousins,English,1990–present,20.0
+264,Dragonlance,Various authors,English,1984–present,20.0
+265,幻魔大戦 (Genma Taisen),Kazumasa Hirai,Japanese,1979–1983,20.0
+266,青春の門 (The Gate of Youth),Hiroyuki Itsuki,Japanese,1970–present,20.0
+267,スレイヤーズ (Slayers),Hajime Kanzaka,Japanese,1989–present,20.0
+268,The Foundation Trilogy,Isaac Asimov,English,1950–1953,20.0
+269,Horrible Histories,Terry Deary,English,1993–present,20.0
+270,Rainbow Magic,Daisy Meadows,English,2003–present,20.0
+271,Morgan Kane,Louis Masterson,Norwegian,1966–,20.0
+272,The Southern Vampire Mysteries,Charlaine Harris,English,2001–2013,20.0
+273,Doc Savage,"Lester Dent, various authors",English,1933–present,20.0
+274,涼宮ハルヒシリーズ (Haruhi Suzumiya Series),Nagaru Tanigawa,Japanese,2003–present,20.0
+275,科学のアルバム (Kagaku no album),Various authors,Japanese,1970–present,19.0
+276,剣客商売 (Kenkaku Shobai),Shotaro Ikenami,Japanese,1972–1989,18.0
+277,Erast Fandorin series,Boris Akunin,Russian,1998–present,18.0
+278,Dragonriders of Pern,Anne McCaffrey,English,1967–present,18.0
+279,吸血鬼ハンターD (Vampire Hunter D),Hideyuki Kikuchi,Japanese,1983–present,17.0
+280,The Hitchhiker's Guide to the Galaxy,"Douglas Adams, plus a final book by Eoin Colfer",English,1979–2008,16.0
+281,ぼくらシリーズ (Bokura series),Osamu Soda,Japanese,1985–present,15.0
+282,Bridget Jones,Helen Fielding,English,1996–present,15.0
+283,His Dark Materials,Philip Pullman,English,1995–2000,15.0
+284,銀河英雄伝説 (Legend of the Galactic Heroes),Yoshiki Tanaka,Japanese,1982–1989,15.0
+285,The No. 1 Ladies Detective Agency,Alexander McCall Smith,English,1999–present,15.0
+286,Der Regenbogenfisch (Rainbow Fish),Marcus Pfister,German,1992–present,15.0
+287,The Riftwar Cycle,Raymond E. Feist,English,1982–present,15.0
+288,The Thrawn trilogy,Timothy Zahn,English,1991–93,15.0
+289,Wiedźmin (The Witcher),Andrzej Sapkowski,Polish,1990–2013,15.0

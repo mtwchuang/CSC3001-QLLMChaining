@@ -1,6 +1,6 @@
 streamlit
 langchain
-ctransformers
+ctransformers[cuda]
 pandas
-accelerator
 sqlite3
+accelerate
