@@ -2,5 +2,11 @@ dependencies
 raw_datasets
 model
 __pycache__
-books_database.db
-invoice_database.db
+
+# Database
+invoice.db
+benchmarking.db
+
+# Images
+ground_truth_plot.png
+generated_plot.png
