@@ -6,7 +6,7 @@ QLLMChain is an AI Chatbot application designed to enables users to interact wit
 
 ## System Architecture
 
-![Architecture Diagram](info/architecture_diagram.png)
+![Architecture Diagram](info/QLLMChaining_Architecture.png)
 
 The system consists of the following components:
 - **Frontend Interface**: Streamlit-based UI for displaying outputs and allowing user interactions.
@@ -41,7 +41,7 @@ The `Text-to-Python` component was benchmarked using the `CodeLlama-7B-Python-GG
 - **SSIM (Structural Similarity Index)**: Measures the similarity between generated visualizations and reference images.
 - **Pixel Similarity**: The similarity in pixel values between generated and reference images.
 - **Average Latency**: The time taken to generate visualizations.
-![Text-to-Python Performance](info/Text-to-Python_Performance.png)
+![Text-to-Python Performance](info/Text-to-Python Performance.png)
 
 ## Installation
 ### Python Virtual Environment and Dependencies
