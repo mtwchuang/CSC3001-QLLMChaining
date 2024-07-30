@@ -41,7 +41,7 @@ The `Text-to-Python` component was benchmarked using the `CodeLlama-7B-Python-GG
 - **SSIM (Structural Similarity Index)**: Measures the similarity between generated visualizations and reference images.
 - **Pixel Similarity**: The similarity in pixel values between generated and reference images.
 - **Average Latency**: The time taken to generate visualizations.
-![Text-to-Python Performance](info/Text-to-Python Performance.png)
+![Text-to-Python Performance](info/Text-to-Python_Performance.png)
 
 ## Installation
 ### Python Virtual Environment and Dependencies
