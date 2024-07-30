@@ -68,6 +68,11 @@ deactivate
 - pip
 - Windows (Unsure for MacOS)
 
+Create the following local folders
+* database
+* model
+* raw_datasets
+
 ### Downloading Necessary Models
 
 #### Step 1: Download the Quantised Models
