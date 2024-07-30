@@ -17,13 +17,13 @@ from sqlparse.tokens import Keyword, DML
 
 def connect_to_db():
     """Creates sqlite invoice database if not exists, else returns connection"""
-    conn = sqlite3.connect('invoice.db')
+    conn = sqlite3.connect('database/invoice.db')
     return conn
 
 def drop_db():
     """Drops sqlite3 invoice database"""
     try:
-        os.remove("invoice.db")
+        os.remove("database/invoice.db")
         print(f"Database dropped successfully.")
     except FileNotFoundError:
         print(f"Database does not exist.")
@@ -251,18 +251,8 @@ def extract_primary_keys(c, table_names):
             if col[5] == 1:  # Primary key column
                 primary_keys[table] = col[1]
                 break  # Assuming there is only one primary key column per table
-    print(primary_keys)
+    # print(primary_keys)
     return primary_keys
-
-def get_table_summaries(summaries):
-    summary_str = "--- Table Verification Summary ---\n\n"
-    for table, summary in summaries.items():
-        summary_str += f"Table: {table}\n"
-        summary_str += f"* Total Rows: {summary['total_rows']}\n"
-        summary_str += f"* Verified Rows: {summary['verified_rows']}\n"
-        summary_str += f"* Percentage Verified: {summary['percentage_verified']:.2f}%\n\n"
-    summary_str += "--- End of Verification Summary ---"
-    return summary_str
 
 def print_first_few_rows(data, num_rows=5, label="Data"):
     print(f"--- {label} (first {num_rows} rows) ---")
@@ -363,13 +353,25 @@ def verify_data_integrity(c, query):
 
     return compromised_data, table_summaries
 
+def get_table_summaries(summaries):
+    """Prepare table summaries for display."""
+    summary_data = []
+    for table, summary in summaries.items():
+        summary_data.append({
+            "Table": table,
+            "Total Rows": summary['total_rows'],
+            "Verified Rows": summary['verified_rows'],
+            "Percentage Verified": f"{summary['percentage_verified']:.2f}%"
+        })
+    return summary_data
+
 ###################################################
 # Benchmarking DB Function Calls
 ###################################################
 
 def connect_to_benchmark_db():
     """Creates sqlite benchmarking database if not exists, else returns connection"""
-    conn = sqlite3.connect('benchmarking.db')
+    conn = sqlite3.connect('database/benchmarking.db')
     cursor = conn.cursor()
     # Create table to store SQL benchmark statistics
     cursor.execute('''
@@ -421,11 +423,11 @@ def connect_to_benchmark_db():
     # Create table to store general visualization benchmark statistics
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS vis_benchmark_stats (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
             query TEXT,
-            bleu_score REAL,
-            ssim_index REAL,
             executable BOOLEAN,
+            ssim_index REAL,
+            pixel_similarity REAL,
+            bleu_score REAL,
             difficulty TEXT
         )
     ''')
@@ -434,10 +436,11 @@ def connect_to_benchmark_db():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS vis_summary_stats (
             difficulty TEXT PRIMARY KEY,
-            average_bleu_score REAL,
+            executable_rate REAL,
             average_ssim_index REAL,
-            average_latency REAL,
-            executable_rate REAL
+            average_pixel_similarity REAL,
+            average_bleu_score REAL,
+            average_latency REAL
         )
     ''')
     print("Initialized vis_summary_stats table")
@@ -448,16 +451,17 @@ def connect_to_benchmark_db():
 def drop_benchmark_db():
     """Drops sqlite3 benchmarking database"""
     try:
-        os.remove("benchmarking.db")
+        os.remove("database/benchmarking.db")
         print(f"Database dropped successfully.")
     except FileNotFoundError:
         print(f"Database does not exist.")
     except Exception as e:
         print(f"Error dropping database: {e}")
 
+ ####### TEXT TO SQL #######
 def store_sql_summary(difficulty, accuracy, avg_bleu, avg_latency):
     """Insert SQL summary for a particular difficulty into sql_summary_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+    conn = sqlite3.connect('database/benchmarking.db')
     cursor = conn.cursor()
         
     cursor.execute('''
@@ -469,7 +473,7 @@ def store_sql_summary(difficulty, accuracy, avg_bleu, avg_latency):
 
 def store_sql_stat(query, correct_result, bleu_score, difficulty):
     """Insert SQL statistic for a particular query into sql_benchmark_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+    conn = sqlite3.connect('database/benchmarking.db')
     cursor = conn.cursor()
     cursor.execute('''
         INSERT INTO sql_benchmark_stats (query, correct_result, bleu_score, difficulty)
@@ -480,14 +484,15 @@ def store_sql_stat(query, correct_result, bleu_score, difficulty):
 
 def read_sql_summary():
     """Read the SQL summary statistics from sql_summary_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+    conn = sqlite3.connect('database/benchmarking.db')
     df = pd.read_sql_query("SELECT * FROM sql_summary_stats", conn)
     conn.close()
     return df
 
+ ####### TEXT TO CHAT #######
 def store_chat_summary(difficulty, avg_bert, avg_rouge, avg_latency):
     """Insert chat summary for a particular difficulty into chat_summary_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+    conn = sqlite3.connect('database/benchmarking.db')
     cursor = conn.cursor()
         
     cursor.execute('''
@@ -499,7 +504,7 @@ def store_chat_summary(difficulty, avg_bert, avg_rouge, avg_latency):
 
 def store_chat_stat(query, bert_score, rouge_score, difficulty):
     """Insert chat statistic for a particular query into chat_benchmark_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+    conn = sqlite3.connect('database/benchmarking.db')
     cursor = conn.cursor()
     cursor.execute('''
         INSERT INTO chat_benchmark_stats (query, bert_score, rouge_score, difficulty)
@@ -510,38 +515,39 @@ def store_chat_stat(query, bert_score, rouge_score, difficulty):
 
 def read_chat_summary():
     """Read the chat summary statistics from chat_summary_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+    conn = sqlite3.connect('database/benchmarking.db')
     df = pd.read_sql_query("SELECT * FROM chat_summary_stats", conn)
     conn.close()
     return df
 
-def store_vis_summary(difficulty, avg_bleu, avg_ssim, avg_latency, exec_rate):
-    """Insert visualization summary for a particular difficulty into vis_summary_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+ ####### TEXT TO VIS #######
+def store_vis_stat(query, executable, ssim_index, pixel_similarity, bleu_score, difficulty):
+    """Insert visualization statistic for a particular query into vis_benchmark_stats table"""
+    conn = sqlite3.connect('database/benchmarking.db')
     cursor = conn.cursor()
-        
     cursor.execute('''
-        INSERT OR REPLACE INTO vis_summary_stats (difficulty, average_bleu_score, average_ssim_index, average_latency, executable_rate)
-        VALUES (?, ?, ?, ?, ?)
-    ''', (difficulty, avg_bleu, avg_ssim, avg_latency, exec_rate))
-    
+        INSERT INTO vis_benchmark_stats (query, executable, ssim_index, pixel_similarity, bleu_score, difficulty)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ''', (query, executable, ssim_index, pixel_similarity, bleu_score, difficulty))
     conn.commit()
     conn.close()
 
-def store_vis_stat(query, bleu_score, ssim_index, executable, difficulty):
-    """Insert visualization statistic for a particular query into vis_benchmark_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+def store_vis_summary(difficulty, exec_rate, avg_ssim, avg_pixel_similarity, avg_bleu, avg_latency):
+    """Insert visualization summary for a particular difficulty into vis_summary_stats table"""
+    conn = sqlite3.connect('database/benchmarking.db')
     cursor = conn.cursor()
+        
     cursor.execute('''
-        INSERT INTO vis_benchmark_stats (query, bleu_score, ssim_index, executable, difficulty)
-        VALUES (?, ?, ?, ?, ?)
-    ''', (query, bleu_score, ssim_index, executable, difficulty))
+        INSERT OR REPLACE INTO vis_summary_stats (difficulty, executable_rate, average_ssim_index, average_pixel_similarity, average_bleu_score, average_latency)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ''', (difficulty, exec_rate, avg_ssim, avg_pixel_similarity, avg_bleu, avg_latency))
+    
     conn.commit()
     conn.close()
 
 def read_vis_summary():
     """Read the visualization summary statistics from vis_summary_stats table"""
-    conn = sqlite3.connect('benchmarking.db')
+    conn = sqlite3.connect('database/benchmarking.db')
     df = pd.read_sql_query("SELECT * FROM vis_summary_stats", conn)
     conn.close()
     return df

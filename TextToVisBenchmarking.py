@@ -1090,7 +1090,7 @@ def save_image(array, path):
     image.save(path)
 
 def compare_images(img1_path, img2_path):
-    """Compares two images, and returns structural similarity index measure and pixel differences"""
+    """Compares two images, and returns structural similarity index measure and pixel similarity"""
     img1 = Image.open(img1_path)
     img2 = Image.open(img2_path)
 
@@ -1108,23 +1108,22 @@ def compare_images(img1_path, img2_path):
 
     # Calculate SSIM
     ssim_index, diff = ssim(img1_array, img2_array, full=True, data_range=1.0)
+    # Convert pixel similarity stored into integer 8 between 0 to 255 range
     diff = (diff * 255).astype("uint8")
 
-    # Pixel-by-pixel comparison
-    # pixel_diff = np.sum(diff > 0) / diff.size  # Percentage of different pixels
+    # Percentage of average similar pixels
+    pixel_similarity = np.sum(diff > 0) / diff.size  
 
-    print(f"SSIM: {ssim_index}")
-    # print(f"Percentage of different pixels: {pixel_diff * 100}%")
-
-    return ssim_index
+    return ssim_index, pixel_similarity
 
 def evaluate_text_to_visualization(llm, benchmark_data, difficulty):
     """Evaluate the Text-to-Visualization LLM using benchmark data."""
-    executable_counter = 0  # Counter for executable generated codes
-    bleu_scores = [] # Container for all bleu scores
-    ssim_indexes = [] # Container for all ssim index scores
-    query_times = [] # Container for all the query timings
-    total_queries = len(benchmark_data)  # Total number of benchmark queries
+    executable_counter = 0                  # Counter for executable generated codes
+    bleu_scores = []                        # Container for all bleu scores
+    ssim_indexes = []                       # Container for all ssim index scores
+    query_times = []                        # Container for all the query timings
+    pixel_similarity_list = []              # Container for all pixel similarity
+    total_queries = len(benchmark_data)     # Total number of benchmark queries
     
     # Difficulty and Query Clarification
     print(f"Benchmarking {total_queries} number of queries for {difficulty} difficulty for Text-to-Python QLLM")
@@ -1138,6 +1137,7 @@ def evaluate_text_to_visualization(llm, benchmark_data, difficulty):
         executable = False
         temp_bleu_score = 0
         temp_ssim_index = 0
+        temp_pixel_similarity = 0
 
         # Clean up plot files
         if os.path.exists('ground_truth_plot.png'):
@@ -1192,9 +1192,11 @@ def evaluate_text_to_visualization(llm, benchmark_data, difficulty):
 
                 # Compare the generated plot with the ground truth plot
                 if os.path.exists('generated_plot.png'):
-                    temp_ssim_index = compare_images('ground_truth_plot.png', 'generated_plot.png')
+                    temp_ssim_index, temp_pixel_similarity = compare_images('ground_truth_plot.png', 'generated_plot.png')
                     ssim_indexes.append(temp_ssim_index)
-                    print(f"SSIM Index: {temp_ssim_index}")
+                    pixel_similarity_list.append(temp_pixel_similarity)
+                    print(f"SSIM Index Percentage: {temp_ssim_index * 100}%")
+                    print(f"Pixel Similarity Percentage: {temp_pixel_similarity * 100}%")
                 else:
                     print("Generated plot not created, skipping image comparison.")
             else:
@@ -1204,22 +1206,24 @@ def evaluate_text_to_visualization(llm, benchmark_data, difficulty):
             print(f"Error with python visualisation generation: {e}")
     
         # Save results to database
-        DatabaseConfiguration.store_vis_stat(question, temp_bleu_score, temp_ssim_index, executable, difficulty)
-        print("Added Visualization Stat to DB")
+        DatabaseConfiguration.store_vis_stat(question, executable, temp_ssim_index, temp_pixel_similarity, temp_bleu_score, difficulty)
+        print("Added VIS Test Case to vis_benchmark_stats")
 
     # Calculate a summary of metrics for visualization difficulty
     executable_rate = executable_counter / total_queries
-    average_bleu_score = sum(bleu_scores) / total_queries
     average_ssim_index = sum(ssim_indexes) / executable_counter
+    average_pixel_similarity = sum(pixel_similarity_list) / executable_counter
+    average_bleu_score = sum(bleu_scores) / total_queries
     average_latency = sum(query_times) / total_queries
 
     print(f"Executable Rate: {executable_rate * 100}%")
-    print(f"Average BLEU Score: {average_bleu_score:.2f}")
     print(f"Average SSIM Score: {average_ssim_index:.2f}")
+    print(f"Average Pixel Similarity: {average_pixel_similarity:.2f}")
+    print(f"Average BLEU Score: {average_bleu_score:.2f}")
     print(f"Average Latency: {average_latency:.2f} seconds")
 
     # Store result summary to database
-    DatabaseConfiguration.store_vis_summary(difficulty, average_bleu_score, average_ssim_index, average_latency, executable_rate)
+    DatabaseConfiguration.store_vis_summary(difficulty, executable_rate, average_ssim_index, average_pixel_similarity, average_bleu_score, average_latency)
     print("Added VIS summary stat to vis_summary_stats")
 
 def run_visualization_benchmark():

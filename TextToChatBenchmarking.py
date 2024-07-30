@@ -3,7 +3,6 @@ import LLMConfiguration
 import DatabaseConfiguration
 # Others
 from rouge import Rouge
-import bert_score
 from bert_score import score
 import numpy as np
 import time

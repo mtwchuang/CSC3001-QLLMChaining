@@ -1,13 +1,13 @@
 # libraries
 import time
-from transformers import pipeline
 from langchain_community.llms import CTransformers
 from accelerate import Accelerator
-from ctransformers import AutoModelForCausalLM
 from transformers import LlamaTokenizer
 
 # global variables
 accelerator = Accelerator()
+# To be changed based on where you place your original Llama-2-7b-Chat-GGUF model (not the QLLM.gguf) that was downloaded
+tokenizer_fp = "C:/Users/Matthew Chuang/.cache/huggingface/hub/models--TheBloke--Llama-2-7B-Chat-GGUF/.no_exist/191239b3e26b2882fb562ffccdd1cf0f65402adb"
 
 """LLM CTransformer Deployment Functions
 
@@ -90,7 +90,7 @@ def generate_sql_query(llm, context, question):
     """Returns sqlite query, given the database context and question"""
     max_context_length = llm.config.get("context_length", None)
     max_new_tokens = llm.config.get("max_new_tokens", None)
-    tokenizer = LlamaTokenizer.from_pretrained("C:/Users/Matthew Chuang/.cache/huggingface/hub/models--TheBloke--Llama-2-7B-Chat-GGUF/.no_exist/191239b3e26b2882fb562ffccdd1cf0f65402adb")
+    tokenizer = LlamaTokenizer.from_pretrained(tokenizer_fp)
     start_time = time.time()
 
     # Prompt Formatting for NSQL Llama 2 (Prompts + Context + Question)
@@ -133,11 +133,11 @@ def generate_textual_insights(llm, question, raw_data):
     """Returns textual insights based on the raw data extracted from the database"""
     max_context_length = llm.config.get("context_length", None)
     max_new_tokens = llm.config.get("max_new_tokens", None)
-    tokenizer = LlamaTokenizer.from_pretrained("C:/Users/Matthew Chuang/.cache/huggingface/hub/models--TheBloke--Llama-2-7B-Chat-GGUF/.no_exist/191239b3e26b2882fb562ffccdd1cf0f65402adb")
+    tokenizer = LlamaTokenizer.from_pretrained(tokenizer_fp)
     start_time = time.time()
 
     # Prompt Formatting for Llama 2 Chat (Prompt template + Question + Raw data)
-    crafted_prompt = f"""[INST] <<SYS>> Based on the question and data given, answer the question using text with the data. No explanation is required. Be careful to look out for reptitions. Use bullet points for newlines to ensure proper formatting. Ensure all information is given is reflected. <</SYS>> Here is my question: "{question}". Based on the question these are the results: {raw_data}[/INST]"""
+    crafted_prompt = f"""[INST] <<SYS>> Based on the question and data given, answer the question using text with the data. No explanation is required. Be careful to look out for reptitions. Use bullet points for newlines to ensure proper formatting. Ensure all information is given is reflected. Avoid using | delimiters. <</SYS>> Here is my question: "{question}". Based on the question these are the results: {raw_data}.[/INST]"""
     # print("Crafted Prompt:\n", crafted_prompt)
 
     # Token Estimation for Query
@@ -168,13 +168,13 @@ def generate_plot_code(llm, question, raw_data):
     """Returns python code based on prompts and raw data extracted from the database"""
     max_context_length = llm.config.get("context_length", None)
     max_new_tokens = llm.config.get("max_new_tokens", None)
-    tokenizer = LlamaTokenizer.from_pretrained("C:/Users/Matthew Chuang/.cache/huggingface/hub/models--TheBloke--Llama-2-7B-Chat-GGUF/.no_exist/191239b3e26b2882fb562ffccdd1cf0f65402adb")
+    tokenizer = LlamaTokenizer.from_pretrained(tokenizer_fp)
     start_time = time.time()
 
     # Prompt Formatting for Llama 2 Code (Prompt template + Question + Raw data)
     raw_data_str = str(raw_data)
     crafted_prompt = f"""[INST] Based on the question given as: {question}, and the dataframe given as {raw_data_str}, generate matplotlib code using this dataframe to answer the question. The data is already provided as a list of tuples, so there's no need to read any external data sources, including URLs or CSV files. Only use the provided dataframe for the visualization, avoid using dictionaries. Pay attention to the structure of the data and the types of operations that are valid for it. Pay attention to the question and use the right metric and include it in the graph.[/INST]"""
-    # print(crafted_prompt)
+    print(crafted_prompt)
 
     # Token Estimation for Query
     tokens = tokenizer.encode(crafted_prompt)

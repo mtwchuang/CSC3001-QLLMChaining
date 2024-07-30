@@ -2,5 +2,12 @@ streamlit
 langchain
 ctransformers[cuda]
 pandas
-sqlite3
 accelerate
+numpy
+nltk
+Pillow
+scikit-image
+transformers
+matplotlib
+rouge-score
+bert-score
