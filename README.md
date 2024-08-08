@@ -80,8 +80,8 @@ Create the following local folders
 Download the raw GGUf files for the Text-to-SQL, Text-to-Chat, and Text-to-Python quantised models from the following links
 
 * [Text-to-SQL](https://huggingface.co/TheBloke/nsql-llama-2-7B-GGUF) model page.
-* [Text-to-Chat](https://https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF) model page. 
-* [Text-to-Python](https://https://huggingface.co/TheBloke/CodeLlama-7B-Python-GGUF) model page.
+* [Text-to-Chat](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF) model page. 
+* [Text-to-Python](https://huggingface.co/TheBloke/CodeLlama-7B-Python-GGUF) model page.
 
 For each of these pages, locate and download the `Q5_K_M` version of the model.
 
