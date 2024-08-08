@@ -10,11 +10,9 @@ import time
 if "db_initialized" not in st.session_state:
     DatabaseConfiguration.create_invoice_db()
     st.session_state.database_context = DatabaseConfiguration.get_db_schema()
-    # DatabaseConfiguration.connect_to_benchmark_db()
     st.session_state.db_initialized = True
 
 # Streamlit Application Code
-st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="QLLMChain", page_icon=":robot_face:")
 st.title(":chart_with_upwards_trend: QLLMChain")
 st.markdown("Using quantised locally deployed large language models to power information retrieval and intepretation")
@@ -64,9 +62,6 @@ Hard Queries (With joins and conditional filtering)
 1. How much total payment amount did the IT department spend on the Product named, "Product 7"?
 2. How much total payment amount did the employee named "Taylor Walker" handle through all the invoices? 
         """)
-# - Get me the top vendor names and their corresponding total payment amounts
-# - Give me the top three products that are sold the most along with the number of times they have been sold.
-# - Give me the top three departments who used the most total payment amounts, and their corresponding total payment amounts
 
     # Page Variables
     st.sidebar.caption("Options on how you want query your data:")

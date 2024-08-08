@@ -8,7 +8,7 @@ from faker import Faker
 import random
 
 import sqlparse
-from sqlparse.sql import Identifier, IdentifierList
+from sqlparse.sql import Identifier
 from sqlparse.tokens import Keyword, DML
 
 ###################################################
